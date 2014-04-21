@@ -40,7 +40,6 @@ public class HelloWorld extends PApplet implements OscEventListener {
 		}
 	}
 
-	@Override
 	public void oscEvent(OscMessage message) 
 	{
 		if(message.checkAddrPattern("/helloWorld")==true)
@@ -49,10 +48,9 @@ public class HelloWorld extends PApplet implements OscEventListener {
 		}
 	}
 
-	@Override
 	public void oscStatus(OscStatus status) 
 	{
-		// TODO Auto-generated method stub
+	
 		
 	}
 	
