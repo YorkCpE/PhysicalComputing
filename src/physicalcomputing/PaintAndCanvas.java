@@ -11,7 +11,7 @@ import oscP5.OscStatus;
 import processing.core.PApplet;
 import processing.core.PImage;
 
-public class PaintByClicks extends PApplet implements OscEventListener,ControlListener
+public class PaintAndCanvas extends PApplet implements OscEventListener,ControlListener
 {
 
 	/**
@@ -142,7 +142,7 @@ public class PaintByClicks extends PApplet implements OscEventListener,ControlLi
 	}
 
 	public static void main(String _args[]) {
-		PApplet.main(new String[] {physicalcomputing.PaintByClicks.class.getName() });
+		PApplet.main(new String[] {physicalcomputing.PaintAndCanvas.class.getName() });
 	}
 
 	public void oscEvent(OscMessage theMessage) 
