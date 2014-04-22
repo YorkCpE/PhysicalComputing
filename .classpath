@@ -91,6 +91,12 @@
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="PhysicalComputing/lib/user/oscP5"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/base/core/RXTXcomm.jar"/>
+	<classpathentry kind="lib" path="lib/base/core/serial.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="PhysicalComputing/lib/base/core/Serial Drivers/windows64"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
