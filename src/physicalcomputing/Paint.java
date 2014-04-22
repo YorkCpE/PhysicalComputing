@@ -22,6 +22,8 @@ public class Paint extends PApplet implements OscEventListener
 
 	NetAddress everyone = new NetAddress("255.255.255.255", listeningPort);
 
+	OscP5 server;
+	
 	String computerName="netjason";
 	NetAddress friendsComputer = new NetAddress(computerName, listeningPort);
 	
@@ -32,7 +34,9 @@ public class Paint extends PApplet implements OscEventListener
 		size(800,600);
 
 		//change the path here to load a different image
-		image = loadImage("img/Mona_Lisa.jpg");
+		//image = loadImage("img/Mona_Lisa.jpg");
+		//image = loadImage("img/Hokiebird.jpg");
+		image = loadImage("img/Scotland.jpg");
 
 		//make the image fit the screen
 		image.resize(width, height);
@@ -41,8 +45,8 @@ public class Paint extends PApplet implements OscEventListener
 		image(image,0,0);
 	}
 
-	int brushSize=5;
-	int MAX_BRUSH_SIZE=5;
+	int brushSize=7;
+	int MAX_BRUSH_SIZE=7;
 	public void draw()
 	{	
 		image(image,0,0);
@@ -55,8 +59,16 @@ public class Paint extends PApplet implements OscEventListener
 		sendPixelsInAreaAround(mouseX, mouseY, brushSize);
 	}
 
+	long lastTransmission=0;
 	private void sendPixelsInAreaAround(int x, int y, int squareSize) 
 	{
+		long delta=System.currentTimeMillis()-lastTransmission;
+		
+		if(delta<10)
+		{
+			return;
+		}
+		
 		if(squareSize>MAX_BRUSH_SIZE)
 		{
 			squareSize=MAX_BRUSH_SIZE;
@@ -84,7 +96,9 @@ public class Paint extends PApplet implements OscEventListener
 		OscMessage oscMessage = new OscMessage("/paintByClicks");
 		oscMessage.add(messageString);
 
+		lastTransmission=System.currentTimeMillis();
 		OscP5.flush(oscMessage, destination);
+		
 	}
 
 	public static void main(String _args[]) {

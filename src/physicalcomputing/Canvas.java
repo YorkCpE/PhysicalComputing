@@ -57,8 +57,13 @@ public class Canvas extends PApplet implements OscEventListener
 					println("Not Listening");
 				}
 			}
+			if(key=='c')
+			{
+				background(255);
+			}
 		}
 
+		fill(255);
 		text("My IP: "+server.ip(),10,(float) (height*.8));
 	}
 
