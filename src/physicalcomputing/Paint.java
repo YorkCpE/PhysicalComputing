@@ -34,9 +34,9 @@ public class Paint extends PApplet implements OscEventListener
 		size(800,600);
 
 		//change the path here to load a different image
-		//image = loadImage("img/Mona_Lisa.jpg");
+		image = loadImage("img/Mona_Lisa.jpg");
 		//image = loadImage("img/Hokiebird.jpg");
-		image = loadImage("img/Scotland.jpg");
+		//image = loadImage("img/Scotland.jpg");
 
 		//make the image fit the screen
 		image.resize(width, height);
